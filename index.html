@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TINY SOCIAL SEOUL — Questions After Work</title>
+    <title>TINY SOCIAL SEOUL — Live Column After Work</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
@@ -87,6 +87,7 @@
         .sticker--yellow { background: var(--yellow); color: var(--black); }
         .sticker--mint { background: var(--mint); color: var(--white); }
         .sticker--sky { background: var(--sky); color: var(--white); }
+        .sticker--lavender { background: var(--lavender); color: var(--white); }
 
         /* ========================================
            NAVIGATION
@@ -198,7 +199,7 @@
         }
 
         .nav-cta:hover {
-            background: var(--blue);
+            background: var(--sky);
         }
 
         /* ========================================
@@ -578,20 +579,20 @@
             50% { transform: translateY(-8px); }
         }
 
-        /* Hero Stats */
-        .hero-stats {
+        /* Hero Pillars (replacing Stats) */
+        .hero-pillars {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             border-top: 3px solid var(--black);
         }
 
         @media (min-width: 768px) {
-            .hero-stats {
-                grid-template-columns: repeat(4, 1fr);
+            .hero-pillars {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
-        .hero-stat {
+        .hero-pillar {
             padding: 32px 24px;
             border-right: 3px solid var(--black);
             border-bottom: 3px solid var(--black);
@@ -601,107 +602,51 @@
         }
 
         @media (min-width: 768px) {
-            .hero-stat {
+            .hero-pillar {
                 padding: 40px 32px;
                 border-bottom: none;
             }
         }
 
-        .hero-stat:last-child {
+        .hero-pillar:last-child {
             border-right: none;
         }
 
         @media (max-width: 767px) {
-            .hero-stat:nth-child(2n) { border-right: none; }
-            .hero-stat:nth-child(n+3) { border-bottom: none; }
+            .hero-pillar { border-right: none; }
+            .hero-pillar:last-child { border-bottom: none; }
         }
 
-        .hero-stat:hover {
-            background: var(--yellow);
+        .hero-pillar:hover {
             transform: scale(1.02);
         }
 
-        .hero-stat:nth-child(2):hover { background: var(--coral); color: var(--white); }
-        .hero-stat:nth-child(3):hover { background: var(--sky); color: var(--white); }
-        .hero-stat:nth-child(4):hover { background: var(--mint); color: var(--white); }
+        .hero-pillar:nth-child(1):hover { background: var(--peach); }
+        .hero-pillar:nth-child(2):hover { background: var(--yellow); }
+        .hero-pillar:nth-child(3):hover { background: var(--sky); color: var(--white); }
 
-        .hero-stat-number {
+        .hero-pillar-icon {
+            font-size: 1.75rem;
+            margin-bottom: 12px;
+        }
+
+        .hero-pillar-title {
             font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: 1.25rem;
             font-weight: 800;
-            line-height: 1;
             letter-spacing: -0.02em;
             margin-bottom: 8px;
         }
 
-        .hero-stat-plus {
-            color: var(--coral);
-            font-size: 0.7em;
-        }
-
-        .hero-stat:hover .hero-stat-plus {
-            color: inherit;
-        }
-
-        .hero-stat-label {
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            opacity: 0.6;
+        .hero-pillar-desc {
+            font-size: 0.8125rem;
+            line-height: 1.6;
+            opacity: 0.7;
         }
 
         /* ========================================
-           ABOUT SECTION
+           SECTION COMMONS
            ======================================== */
-        .about {
-            border-bottom: 3px solid var(--black);
-        }
-
-        .about-header {
-            padding: 64px 24px;
-            border-bottom: 3px solid var(--black);
-            background: var(--mint);
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        @media (min-width: 768px) {
-            .about-header {
-                padding: 80px 48px;
-            }
-        }
-
-        /* Decorative shapes in header */
-        .about-header-decor {
-            position: absolute;
-            top: 25px;
-            right: 25px;
-            display: flex;
-            gap: 10px;
-        }
-
-        @media (min-width: 768px) {
-            .about-header-decor {
-                top: 40px;
-                right: 60px;
-                gap: 15px;
-            }
-        }
-
-        .decor-shape {
-            width: 30px;
-            height: 30px;
-            background: rgba(255,255,255,0.3);
-            border: 2px solid rgba(255,255,255,0.5);
-            animation: bounce1 2s ease-in-out infinite;
-        }
-
-        .decor-shape:nth-child(1) { border-radius: 50%; animation-delay: 0s; }
-        .decor-shape:nth-child(2) { animation-delay: 0.2s; }
-        .decor-shape:nth-child(3) { border-radius: 50%; animation-delay: 0.4s; }
-
         .section-label {
             display: flex;
             align-items: center;
@@ -721,11 +666,6 @@
             font-size: 1.125rem;
             font-weight: 800;
             border-radius: 50%;
-        }
-
-        .about-header .section-number {
-            background: var(--white);
-            color: var(--mint);
         }
 
         .section-name {
@@ -753,6 +693,62 @@
             opacity: 0.7;
             margin-top: 16px;
             line-height: 1.4;
+        }
+
+        /* Decorative shapes */
+        .decor-shape {
+            width: 30px;
+            height: 30px;
+            background: rgba(255,255,255,0.3);
+            border: 2px solid rgba(255,255,255,0.5);
+            animation: bounce1 2s ease-in-out infinite;
+        }
+
+        .decor-shape:nth-child(1) { border-radius: 50%; animation-delay: 0s; }
+        .decor-shape:nth-child(2) { animation-delay: 0.2s; }
+        .decor-shape:nth-child(3) { border-radius: 50%; animation-delay: 0.4s; }
+
+        .header-decor {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            display: flex;
+            gap: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .header-decor {
+                top: 40px;
+                right: 60px;
+                gap: 15px;
+            }
+        }
+
+        /* ========================================
+           ABOUT SECTION
+           ======================================== */
+        .about {
+            border-bottom: 3px solid var(--black);
+        }
+
+        .about-header {
+            padding: 64px 24px;
+            border-bottom: 3px solid var(--black);
+            background: var(--mint);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .about-header {
+                padding: 80px 48px;
+            }
+        }
+
+        .about-header .section-number {
+            background: var(--white);
+            color: var(--mint);
         }
 
         .about-content {
@@ -805,19 +801,13 @@
             opacity: 0.5;
         }
 
-        /* Principles as Color Cards */
-        .about-principles {
+        /* Message Cards */
+        .about-messages {
             display: grid;
             grid-template-columns: 1fr;
         }
 
-        @media (min-width: 640px) {
-            .about-principles {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .principle {
+        .message-card {
             padding: 32px 24px;
             border-bottom: 3px solid var(--black);
             border-right: 3px solid var(--black);
@@ -826,64 +816,195 @@
         }
 
         @media (min-width: 768px) {
-            .principle {
+            .message-card {
                 padding: 40px 32px;
             }
         }
 
-        .principle:nth-child(1) { background: var(--yellow); }
-        .principle:nth-child(2) { background: var(--coral); color: var(--white); }
-        .principle:nth-child(3) { background: var(--sky); color: var(--white); }
-        .principle:nth-child(4) { background: var(--lavender); color: var(--white); }
+        .message-card:nth-child(1) { background: var(--yellow); }
+        .message-card:nth-child(2) { background: var(--coral); color: var(--white); }
+        .message-card:nth-child(3) { background: var(--sky); color: var(--white); }
 
-        @media (min-width: 640px) {
-            .principle:nth-child(2n) { border-right: none; }
-            .principle:nth-child(n+3) { border-bottom: none; }
+        @media (max-width: 1023px) {
+            .message-card { border-right: none; }
+            .message-card:last-child { border-bottom: none; }
         }
 
-        @media (max-width: 639px) {
-            .principle { border-right: none; }
-            .principle:last-child { border-bottom: none; }
-        }
-
-        .principle:hover {
+        .message-card:hover {
             transform: scale(1.02);
             z-index: 2;
         }
 
-        .principle-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .message-card-quote {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 800;
+            line-height: 1.3;
             margin-bottom: 12px;
         }
 
-        .principle-number {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 800;
-            line-height: 1;
+        .message-card-desc {
+            font-size: 0.875rem;
+            line-height: 1.7;
+            opacity: 0.85;
         }
 
-        .principle-title-en {
-            font-size: 0.625rem;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+        /* ========================================
+           HOW IT WORKS SECTION
+           ======================================== */
+        .how {
+            border-bottom: 3px solid var(--black);
+        }
+
+        .how-header {
+            padding: 64px 24px;
+            border-bottom: 3px solid var(--black);
+            background: var(--lavender);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .how-header {
+                padding: 80px 48px;
+            }
+        }
+
+        .how-header .section-number {
+            background: var(--white);
+            color: var(--lavender);
+        }
+
+        /* Steps */
+        .how-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            border-bottom: 3px solid var(--black);
+        }
+
+        @media (min-width: 768px) {
+            .how-steps {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .how-step {
+            padding: 40px 24px;
+            border-right: 3px solid var(--black);
+            border-bottom: 3px solid var(--black);
+            background: var(--white);
+            transition: all 0.2s ease;
+        }
+
+        @media (min-width: 768px) {
+            .how-step {
+                padding: 48px 32px;
+                border-bottom: none;
+            }
+            .how-step:last-child {
+                border-right: none;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .how-step { border-right: none; }
+            .how-step:last-child { border-bottom: none; }
+        }
+
+        .how-step:hover {
+            background: var(--off-white);
+        }
+
+        .how-step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--black);
+            color: var(--white);
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 800;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .how-step:nth-child(1) .how-step-number { background: var(--coral); }
+        .how-step:nth-child(2) .how-step-number { background: var(--sky); }
+        .how-step:nth-child(3) .how-step-number { background: var(--mint); }
+
+        .how-step-title {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .how-step-desc {
+            font-size: 0.9375rem;
+            line-height: 1.7;
             opacity: 0.7;
         }
 
-        .principle-title-ko {
-            font-size: 1.25rem;
+        /* How Info Grid */
+        .how-info {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .how-info {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .how-info-card {
+            padding: 32px 24px;
+            border-right: 3px solid var(--black);
+            border-bottom: 3px solid var(--black);
+            background: var(--off-white);
+            transition: all 0.2s ease;
+        }
+
+        @media (min-width: 768px) {
+            .how-info-card {
+                padding: 40px 32px;
+                border-bottom: none;
+            }
+            .how-info-card:last-child {
+                border-right: none;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .how-info-card { border-right: none; }
+            .how-info-card:last-child { border-bottom: none; }
+        }
+
+        .how-info-card:hover {
+            background: var(--yellow);
+        }
+
+        .how-info-icon {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .how-info-title {
+            font-size: 0.625rem;
             font-weight: 700;
-            letter-spacing: -0.01em;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.5;
             margin-bottom: 8px;
         }
 
-        .principle-desc {
-            font-size: 0.875rem;
+        .how-info-value {
+            font-size: 1rem;
+            font-weight: 600;
             line-height: 1.6;
-            opacity: 0.85;
         }
 
         /* ========================================
@@ -913,30 +1034,22 @@
             color: var(--sky);
         }
 
-        /* Decorative shapes in events header */
-        .events-header-decor {
-            position: absolute;
-            top: 25px;
-            right: 25px;
-            display: flex;
-            gap: 10px;
+        /* Event Card */
+        .event-card {
+            border-bottom: 3px solid var(--black);
         }
 
-        @media (min-width: 768px) {
-            .events-header-decor {
-                top: 40px;
-                right: 60px;
-                gap: 15px;
-            }
+        .event-card:last-child {
+            border-bottom: none;
         }
 
-        .events-content {
+        .event-card-inner {
             display: grid;
             grid-template-columns: 1fr;
         }
 
         @media (min-width: 1024px) {
-            .events-content {
+            .event-card-inner {
                 grid-template-columns: 7fr 5fr;
             }
         }
@@ -955,7 +1068,7 @@
 
         @media (min-width: 1024px) {
             .event-main {
-                padding: 80px 64px;
+                padding: 64px;
                 border-right: 3px solid var(--black);
                 border-bottom: none;
             }
@@ -976,7 +1089,12 @@
             box-shadow: 4px 4px 0 var(--black);
             margin-bottom: 32px;
             transform: rotate(-2deg);
-            animation: wiggle 4s ease-in-out infinite;
+            animation: wiggleBadge 4s ease-in-out infinite;
+        }
+
+        @keyframes wiggleBadge {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
         }
 
         .event-title {
@@ -993,7 +1111,7 @@
             font-weight: 400;
             color: var(--black);
             opacity: 0.5;
-            margin-bottom: 40px;
+            margin-bottom: 32px;
         }
 
         .event-details {
@@ -1001,7 +1119,7 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 0;
             border: 3px solid var(--black);
-            margin-bottom: 40px;
+            margin-bottom: 32px;
         }
 
         .event-detail {
@@ -1041,7 +1159,7 @@
         }
 
         .event-description {
-            margin-bottom: 40px;
+            margin-bottom: 32px;
         }
 
         .event-description p {
@@ -1146,7 +1264,20 @@
             top: 30px;
             right: 30px;
             font-size: 2rem;
-            animation: wiggle 3s ease-in-out infinite;
+            animation: wiggleBadge 3s ease-in-out infinite;
+        }
+
+        .event-sidebar--mint {
+            background: var(--mint);
+            color: var(--white);
+        }
+
+        .event-sidebar--mint .event-sidebar-title {
+            border-bottom-color: rgba(255,255,255,0.3);
+        }
+
+        .event-sidebar--mint .event-sidebar-label {
+            opacity: 0.7;
         }
 
         .event-sidebar-title {
@@ -1181,6 +1312,209 @@
             font-size: 1rem;
             font-weight: 600;
             line-height: 1.5;
+        }
+
+        /* Audio Invitation */
+        .audio-invite {
+            margin-top: 28px;
+            padding: 20px;
+            background: rgba(0,0,0,0.08);
+            border-radius: 12px;
+        }
+
+        .event-sidebar--mint .audio-invite {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .audio-invite-label {
+            font-size: 0.625rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.6;
+            margin-bottom: 12px;
+        }
+
+        .audio-invite-player {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .audio-play-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--white);
+            border: 3px solid var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .event-sidebar--mint .audio-play-btn {
+            background: var(--white);
+            color: var(--mint);
+        }
+
+        .audio-play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .audio-wave {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            flex: 1;
+        }
+
+        .audio-wave-bar {
+            width: 4px;
+            border-radius: 4px;
+            background: var(--black);
+            opacity: 0.3;
+            animation: audioWave 1.2s ease-in-out infinite paused;
+        }
+
+        .event-sidebar--mint .audio-wave-bar {
+            background: var(--white);
+            opacity: 0.4;
+        }
+
+        .audio-wave-bar:nth-child(1) { height: 12px; animation-delay: 0s; }
+        .audio-wave-bar:nth-child(2) { height: 20px; animation-delay: 0.1s; }
+        .audio-wave-bar:nth-child(3) { height: 16px; animation-delay: 0.2s; }
+        .audio-wave-bar:nth-child(4) { height: 24px; animation-delay: 0.3s; }
+        .audio-wave-bar:nth-child(5) { height: 14px; animation-delay: 0.4s; }
+        .audio-wave-bar:nth-child(6) { height: 20px; animation-delay: 0.5s; }
+        .audio-wave-bar:nth-child(7) { height: 10px; animation-delay: 0.6s; }
+        .audio-wave-bar:nth-child(8) { height: 18px; animation-delay: 0.7s; }
+        .audio-wave-bar:nth-child(9) { height: 22px; animation-delay: 0.8s; }
+        .audio-wave-bar:nth-child(10) { height: 14px; animation-delay: 0.9s; }
+
+        @keyframes audioWave {
+            0%, 100% { transform: scaleY(0.5); }
+            50% { transform: scaleY(1.2); }
+        }
+
+        .audio-duration {
+            font-size: 0.75rem;
+            font-weight: 600;
+            opacity: 0.5;
+            flex-shrink: 0;
+        }
+
+        /* ========================================
+           FAQ SECTION
+           ======================================== */
+        .faq {
+            border-bottom: 3px solid var(--black);
+        }
+
+        .faq-header {
+            padding: 64px 24px;
+            border-bottom: 3px solid var(--black);
+            background: var(--peach);
+            color: var(--black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .faq-header {
+                padding: 80px 48px;
+            }
+        }
+
+        .faq-header .section-number {
+            background: var(--black);
+            color: var(--peach);
+        }
+
+        .faq-list {
+            list-style: none;
+        }
+
+        .faq-item {
+            border-bottom: 3px solid var(--black);
+            background: var(--white);
+            transition: background 0.2s ease;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 28px 24px;
+            background: none;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: left;
+            cursor: pointer;
+            color: var(--black);
+            transition: all 0.2s ease;
+        }
+
+        @media (min-width: 768px) {
+            .faq-question {
+                padding: 32px 48px;
+                font-size: 1.0625rem;
+            }
+        }
+
+        .faq-question:hover {
+            background: var(--off-white);
+        }
+
+        .faq-toggle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: rotate(45deg);
+            background: var(--coral);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 24px 28px;
+            font-size: 0.9375rem;
+            line-height: 1.8;
+            opacity: 0.7;
+        }
+
+        @media (min-width: 768px) {
+            .faq-answer-inner {
+                padding: 0 48px 32px;
+                max-width: 640px;
+            }
         }
 
         /* ========================================
@@ -1343,8 +1677,9 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#how">How</a></li>
                 <li><a href="#events">Events</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
             <a href="#events" class="nav-cta">Join Event →</a>
         </div>
@@ -1366,10 +1701,10 @@
 
                 <div class="hero-tagline">
                     <p class="hero-tagline-ko">
-                        <span class="highlight">정답보다 질문을</span>, 지식보다 맥락을.
-                        퇴근 후, 생각 하나만 가지고 집에 돌아오는 시간.
+                        퇴근 후, 누군가의 <span class="highlight">흥미로운 생각</span>을 읽는 시간.<br>
+                        카페와 펍에서 열리는 작은 라이브 칼럼.
                     </p>
-                    <p class="hero-tagline-en">Questions over answers. After work gatherings where you take home just one thought.</p>
+                    <p class="hero-tagline-en">A live column after work — interesting ideas, shared in cozy cafes and pubs.</p>
                 </div>
 
                 <a href="#events" class="hero-cta">
@@ -1410,22 +1745,22 @@
             </div>
         </div>
 
-        <div class="hero-stats">
-            <div class="hero-stat">
-                <div class="hero-stat-number">90<span class="hero-stat-plus">+</span></div>
-                <div class="hero-stat-label">Minutes / 분</div>
+        <!-- Three Pillars -->
+        <div class="hero-pillars">
+            <div class="hero-pillar">
+                <div class="hero-pillar-icon">🏠</div>
+                <div class="hero-pillar-title">제3의 공간에서</div>
+                <p class="hero-pillar-desc">집과 직장에서 잠시 벗어나, 퇴근 후 누군가의 취향이 깃든 편안한 카페와 펍에서.</p>
             </div>
-            <div class="hero-stat">
-                <div class="hero-stat-number">15<span class="hero-stat-plus">+</span></div>
-                <div class="hero-stat-label">Attendees / 참여자</div>
+            <div class="hero-pillar">
+                <div class="hero-pillar-icon">💭</div>
+                <div class="hero-pillar-title">나만의 생각을</div>
+                <p class="hero-pillar-desc">전문가가 제안하는 흥미로운 지식과 관점은, 세상을 바라보는 나만의 새로운 감각을 깨웁니다.</p>
             </div>
-            <div class="hero-stat">
-                <div class="hero-stat-number">30<span class="hero-stat-plus">+</span></div>
-                <div class="hero-stat-label">Questions / 질문</div>
-            </div>
-            <div class="hero-stat">
-                <div class="hero-stat-number">01</div>
-                <div class="hero-stat-label">Thought / 생각</div>
+            <div class="hero-pillar">
+                <div class="hero-pillar-icon">🤝</div>
+                <div class="hero-pillar-title">남들과 함께</div>
+                <p class="hero-pillar-desc">화자와 참여자는 구분 없이 섞여, 하나의 주제를 중심으로 각자의 생각을 자유롭게 나눕니다.</p>
             </div>
         </div>
     </section>
@@ -1433,20 +1768,19 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="about-header">
-            <!-- Decorative shapes -->
-            <div class="about-header-decor">
+            <div class="header-decor">
                 <div class="decor-shape"></div>
                 <div class="decor-shape"></div>
                 <div class="decor-shape"></div>
             </div>
             <div class="container">
                 <div class="section-label">
-                    <span class="section-number">02</span>
+                    <span class="section-number">01</span>
                     <span class="section-name">About</span>
                 </div>
                 <h2 class="section-title">
-                    새로운 생각을<br>시작하는 공간
-                    <span class="section-title-en">A playground for grownups where new thoughts begin</span>
+                    Tiny Social이<br>뭔가요?
+                    <span class="section-title-en">A small gathering where one thought sparks many conversations</span>
                 </h2>
             </div>
         </div>
@@ -1454,59 +1788,98 @@
         <div class="about-content">
             <div class="about-text">
                 <p>
-                    <span class="emphasis">Tiny Social</span>은 네트워킹도, 클래스도 아닙니다.
-                    말 안 해도 되는 강의에 갔다가, 생각 하나를 가져와서 집에 돌아오는 경험입니다.
+                    <span class="emphasis">Tiny Social</span>은 퇴근 시간 이후 카페와 펍에서 열리는 작은 모임입니다.
                 </p>
                 <p>
-                    20-30대 직장인이 퇴근 후, '일하는 나'가 아닌
-                    <span class="emphasis">'이해하는 나'</span>로 돌아오는 시간.
-                </p>
-                <p>
-                    사람을 억지로 연결하는 게 아니라,
-                    사람들이 스스로를 유지할 수 있게 해주는 공간입니다.
+                    한 명의 화자(전문가)가 해당 분야의 흥미로운 지식과 경험을
+                    <span class="emphasis">하나의 생각</span>으로 제안하고,
+                    참여자들도 자신만의 생각을 자유롭게 주고받는
+                    '일상의 소소한 이벤트'입니다.
                 </p>
                 <p class="muted">
-                    Not networking, not a class. A cup of coffee for your mind—
-                    come tired, leave refreshed with one new thought.
+                    A small after-work gathering in cafes and pubs. One speaker shares
+                    a fascinating idea, then everyone freely exchanges their own thoughts.
                 </p>
             </div>
 
-            <div class="about-principles">
-                <div class="principle">
-                    <div class="principle-header">
-                        <span class="principle-number">01</span>
-                        <span class="principle-title-en">Low Social Debt</span>
-                    </div>
-                    <h4 class="principle-title-ko">낮은 소셜 부담</h4>
-                    <p class="principle-desc">연락, 답장, 관계 유지 부담 없이. "안 와도 되는" 분위기</p>
+            <div class="about-messages">
+                <div class="message-card">
+                    <p class="message-card-quote">'Tiny Social은 클래스가 아닙니다.'</p>
+                    <p class="message-card-desc">
+                        여긴 딱딱한 강연장이 아니라 서로의 생각과 대화를 나누는 놀이터에 가깝습니다.
+                        화자가 제안한 생각을 통해 참여자들은 서로의 다양한 생각과 대화를 나누게 됩니다.
+                    </p>
                 </div>
+                <div class="message-card">
+                    <p class="message-card-quote">'생각거리로 일탈해보세요.'</p>
+                    <p class="message-card-desc">
+                        머리 아픈 현실은 잠시 접어두고, 세상을 바라보는 색다른 생각을 통해서 재충전해보세요.
+                    </p>
+                </div>
+                <div class="message-card">
+                    <p class="message-card-quote">'100가지의 정보보다는 나만의 생각.'</p>
+                    <p class="message-card-desc">
+                        정보는 세상에 차고 넘칩니다. 그것보다는 동시대를 살아가는 다른 누군가와의 대화를 통해
+                        자기 일상과 세상에 대한 감각을 넓히는 시간이 되길 바랍니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="principle">
-                    <div class="principle-header">
-                        <span class="principle-number">02</span>
-                        <span class="principle-title-en">Identity-Safe Space</span>
-                    </div>
-                    <h4 class="principle-title-ko">정체성 안전 공간</h4>
-                    <p class="principle-desc">결혼, 자녀, 연봉 같은 비교 없이. '지금의 나'만으로 충분한 자리</p>
+    <!-- How It Works Section -->
+    <section class="how" id="how">
+        <div class="how-header">
+            <div class="header-decor">
+                <div class="decor-shape"></div>
+                <div class="decor-shape"></div>
+                <div class="decor-shape"></div>
+            </div>
+            <div class="container">
+                <div class="section-label">
+                    <span class="section-number">02</span>
+                    <span class="section-name">How It Works</span>
                 </div>
+                <h2 class="section-title">
+                    이렇게 진행돼요
+                    <span class="section-title-en">Three simple steps to a refreshing evening</span>
+                </h2>
+            </div>
+        </div>
 
-                <div class="principle">
-                    <div class="principle-header">
-                        <span class="principle-number">03</span>
-                        <span class="principle-title-en">Learning as Pretext</span>
-                    </div>
-                    <h4 class="principle-title-ko">배움이라는 명분</h4>
-                    <p class="principle-desc">"사람 만나러 왔다"가 아니라 "생각 정리하러 왔다"</p>
-                </div>
+        <div class="how-steps">
+            <div class="how-step">
+                <div class="how-step-number">1</div>
+                <h3 class="how-step-title">화자의 생각 제안</h3>
+                <p class="how-step-desc">다양한 전문가들이 화자가 되어 흥미로운 지식과 함께 자신만의 생각을 30분 동안 전달합니다.</p>
+            </div>
+            <div class="how-step">
+                <div class="how-step-number">2</div>
+                <h3 class="how-step-title">참여자 대화</h3>
+                <p class="how-step-desc">이후에는 화자가 전달한 생각을 바탕으로 참여자들이 서로 대화를 통해 각자 생각을 나눕니다.</p>
+            </div>
+            <div class="how-step">
+                <div class="how-step-number">3</div>
+                <h3 class="how-step-title">자유로운 소셜</h3>
+                <p class="how-step-desc">마지막에는 전문가와 참여자가 구분 없이 한데 섞여 편안하게 모입니다.</p>
+            </div>
+        </div>
 
-                <div class="principle">
-                    <div class="principle-header">
-                        <span class="principle-number">04</span>
-                        <span class="principle-title-en">Weak-Tie Magic</span>
-                    </div>
-                    <h4 class="principle-title-ko">약한 연결의 축적</h4>
-                    <p class="principle-desc">강한 친밀감보다, 약하지만 반복되는 연결</p>
-                </div>
+        <div class="how-info">
+            <div class="how-info-card">
+                <div class="how-info-icon">🎯</div>
+                <div class="how-info-title">다루는 주제</div>
+                <p class="how-info-value">사회, 문화, 기술 등 각 분야의 전문가와 함께 우리 일상과 맞닿아 있는 새로운 생각을 다룰 거예요.</p>
+            </div>
+            <div class="how-info-card">
+                <div class="how-info-icon">🌿</div>
+                <div class="how-info-title">분위기</div>
+                <p class="how-info-value">수업처럼 진지하지도, 그렇다고 수다만 떠는 친목도 아니에요. 분위기는 편안하되 주제를 중심으로 자기만의 생각을 나누면 됩니다.</p>
+            </div>
+            <div class="how-info-card">
+                <div class="how-info-icon">👋</div>
+                <div class="how-info-title">참여 방식</div>
+                <p class="how-info-value">듣기만 해도 괜찮아요. 참여자가 원할 때만 편안하게 대화에 참여하면 됩니다.</p>
             </div>
         </div>
     </section>
@@ -1514,8 +1887,7 @@
     <!-- Events Section -->
     <section class="events" id="events">
         <div class="events-header">
-            <!-- Decorative shapes -->
-            <div class="events-header-decor">
+            <div class="header-decor">
                 <div class="decor-shape"></div>
                 <div class="decor-shape"></div>
                 <div class="decor-shape"></div>
@@ -1532,85 +1904,306 @@
             </div>
         </div>
 
-        <div class="events-content">
-            <div class="event-main">
-                <div class="event-badge">☕ 모집 중 — NOW OPEN</div>
+        <!-- Event 1: 신예슬 — 3월 13일 -->
+        <div class="event-card">
+            <div class="event-card-inner">
+                <div class="event-main">
+                    <div class="event-badge">☕ 모집 중 — NOW OPEN</div>
 
-                <h3 class="event-title">AI와 소통하는 법</h3>
-                <p class="event-title-en">How to Communicate with AI</p>
+                    <h3 class="event-title">이름 없는 소리가 음악이 될 때</h3>
+                    <p class="event-title-en">When Nameless Sounds Become Music</p>
 
-                <div class="event-details">
-                    <div class="event-detail">
-                        <div class="event-detail-icon">📅</div>
-                        <div class="event-detail-label">Date / 날짜</div>
-                        <div class="event-detail-value">2026년 3월<br>(일정 조율 중)</div>
+                    <div class="event-details">
+                        <div class="event-detail">
+                            <div class="event-detail-icon">📅</div>
+                            <div class="event-detail-label">Date / 날짜</div>
+                            <div class="event-detail-value">2026년 3월 13일<br>(목요일)</div>
+                        </div>
+                        <div class="event-detail">
+                            <div class="event-detail-icon">⏰</div>
+                            <div class="event-detail-label">Time / 시간</div>
+                            <div class="event-detail-value">저녁 7:30 PM<br>(약 90분)</div>
+                        </div>
+                        <div class="event-detail">
+                            <div class="event-detail-icon">📍</div>
+                            <div class="event-detail-label">Location / 장소</div>
+                            <div class="event-detail-value">Cafe BonDN<br>서울</div>
+                        </div>
+                        <div class="event-detail">
+                            <div class="event-detail-icon">👥</div>
+                            <div class="event-detail-label">Capacity / 인원</div>
+                            <div class="event-detail-value">15-20명<br>소규모</div>
+                        </div>
                     </div>
-                    <div class="event-detail">
-                        <div class="event-detail-icon">⏰</div>
-                        <div class="event-detail-label">Time / 시간</div>
-                        <div class="event-detail-value">저녁 7:30 PM<br>(약 90분)</div>
+
+                    <div class="event-description">
+                        <p>
+                            <span class="speaker">화자: 신예슬</span> — 음악 평론가, 소리와 듣기 경험 연구
+                        </p>
+                        <p>
+                            일상에서 무심코 넘기는 소리에 주의를 기울여본 적 있나요?
+                            음악 평론가와 함께, 이름 없는 소리가 음악이 되는 순간을 탐구하고
+                            듣는 감각을 확장해 일상의 작은 변화와 재미를 발견해봅니다.
+                        </p>
+                        <p class="note">
+                            음악 지식이 전혀 없어도 괜찮아요. 그냥 귀를 열고 와주시면 됩니다.
+                        </p>
                     </div>
-                    <div class="event-detail">
-                        <div class="event-detail-icon">📍</div>
-                        <div class="event-detail-label">Location / 장소</div>
-                        <div class="event-detail-value">서울 시청역<br>인근 카페</div>
+
+                    <div class="event-cta">
+                        <a href="#" class="btn-primary">
+                            참여 신청하기
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="btn-secondary">자세히 보기</a>
                     </div>
-                    <div class="event-detail">
-                        <div class="event-detail-icon">👥</div>
-                        <div class="event-detail-label">Capacity / 인원</div>
-                        <div class="event-detail-value">15-20명<br>소규모</div>
+                </div>
+
+                <div class="event-sidebar">
+                    <div class="event-sidebar-title">Event Info</div>
+
+                    <div class="event-sidebar-item">
+                        <div class="event-sidebar-label">Speaker</div>
+                        <div class="event-sidebar-value">신예슬 — 음악 평론가. 소리와 듣기 경험, 감각의 확장을 탐구합니다.</div>
                     </div>
-                </div>
 
-                <div class="event-description">
-                    <p>
-                        <span class="speaker">연사: 사영준</span> (미디어 아트 교수)
-                    </p>
-                    <p>
-                        AI의 행동과 기계와의 소통을 연구해온 미디어 아티스트와 함께,
-                        인간과 AI가 어떻게 대화하고 관계를 맺을 수 있는지 탐구합니다.
-                    </p>
-                    <p class="note">
-                        오늘은 말하지 않아도 참여한 걸로 충분합니다.
-                        듣다가 가셔도, 질문만 남기셔도 괜찮습니다.
-                    </p>
-                </div>
+                    <div class="event-sidebar-item">
+                        <div class="event-sidebar-label">What You'll Get</div>
+                        <div class="event-sidebar-value">일상의 소리에 귀 기울이는 새로운 감각. 듣기 경험의 풍요로움과 재미.</div>
+                    </div>
 
-                <div class="event-cta">
-                    <a href="#" class="btn-primary">
-                        참여 신청하기
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="btn-secondary">자세히 보기</a>
-                </div>
-            </div>
+                    <div class="event-sidebar-item">
+                        <div class="event-sidebar-label">Venue</div>
+                        <div class="event-sidebar-value"><a href="https://www.instagram.com/cafe_bondn/" target="_blank" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">Cafe BonDN</a>, 서울</div>
+                    </div>
 
-            <div class="event-sidebar">
-                <div class="event-sidebar-title">Event Info</div>
+                    <div class="event-sidebar-item">
+                        <div class="event-sidebar-label">Format</div>
+                        <div class="event-sidebar-value">발제 30분 + 소그룹 대화 60분</div>
+                    </div>
 
-                <div class="event-sidebar-item">
-                    <div class="event-sidebar-label">Format</div>
-                    <div class="event-sidebar-value">발제 30분 + 소그룹 대화 60분</div>
-                </div>
-
-                <div class="event-sidebar-item">
-                    <div class="event-sidebar-label">Vibe</div>
-                    <div class="event-sidebar-value">조용히 듣기만 해도 OK. 강제 아이스브레이커 없음.</div>
-                </div>
-
-                <div class="event-sidebar-item">
-                    <div class="event-sidebar-label">What You Get</div>
-                    <div class="event-sidebar-value">AI와 인간의 관계에 대한 새로운 시각. 피로 없이 집으로.</div>
-                </div>
-
-                <div class="event-sidebar-item">
-                    <div class="event-sidebar-label">Cities</div>
-                    <div class="event-sidebar-value">Seoul · San Francisco</div>
+                    <!-- Audio Invitation -->
+                    <div class="audio-invite">
+                        <div class="audio-invite-label">화자의 음성 초대장</div>
+                        <div class="audio-invite-player">
+                            <button class="audio-play-btn" aria-label="Play">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                            </button>
+                            <div class="audio-wave">
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                            </div>
+                            <span class="audio-duration">0:15</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- Event 2: 사영준 — 3월 20일 -->
+        <div class="event-card">
+            <div class="event-card-inner">
+                <div class="event-main">
+                    <div class="event-badge" style="background: var(--mint);">☕ 모집 중 — NOW OPEN</div>
+
+                    <h3 class="event-title">우리는 가상인간과 어떻게 관계를 맺게 될까?</h3>
+                    <p class="event-title-en">How Will We Relate to Virtual Humans?</p>
+
+                    <div class="event-details">
+                        <div class="event-detail">
+                            <div class="event-detail-icon">📅</div>
+                            <div class="event-detail-label">Date / 날짜</div>
+                            <div class="event-detail-value">2026년 3월 20일<br>(금요일)</div>
+                        </div>
+                        <div class="event-detail">
+                            <div class="event-detail-icon">⏰</div>
+                            <div class="event-detail-label">Time / 시간</div>
+                            <div class="event-detail-value">저녁 7:30 PM<br>(약 90분)</div>
+                        </div>
+                        <div class="event-detail">
+                            <div class="event-detail-icon">📍</div>
+                            <div class="event-detail-label">Location / 장소</div>
+                            <div class="event-detail-value">Cafe BonDN<br>서울</div>
+                        </div>
+                        <div class="event-detail">
+                            <div class="event-detail-icon">👥</div>
+                            <div class="event-detail-label">Capacity / 인원</div>
+                            <div class="event-detail-value">15-20명<br>소규모</div>
+                        </div>
+                    </div>
+
+                    <div class="event-description">
+                        <p>
+                            <span class="speaker">화자: 사영준</span> — 미디어 아트 교수, 디지털 커뮤니케이션과 인간 심리 연구
+                        </p>
+                        <p>
+                            가상인간에게 인간의 권위를 부여하는 시대, 우리는 어떤 관점에서 이들을 대하면 좋을까요?
+                            마음 지각(Mind Perception)부터 AI의 역할 변화까지 — 인간과 기술 사이의 관계를 함께 생각해봅니다.
+                        </p>
+                        <p class="note">
+                            듣기만 해도 참여한 걸로 충분합니다. 질문만 남기셔도 괜찮습니다.
+                        </p>
+                    </div>
+
+                    <div class="event-cta">
+                        <a href="#" class="btn-primary">
+                            참여 신청하기
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="btn-secondary">자세히 보기</a>
+                    </div>
+                </div>
+
+                <div class="event-sidebar event-sidebar--mint">
+                    <div class="event-sidebar-title">Event Info</div>
+
+                    <div class="event-sidebar-item">
+                        <div class="event-sidebar-label">Speaker</div>
+                        <div class="event-sidebar-value">사영준 — 미디어 아트 교수. 디지털 기술로 인한 인간의 반응과 심리를 연구합니다.</div>
+                    </div>
+
+                    <div class="event-sidebar-item">
+                        <div class="event-sidebar-label">Topics</div>
+                        <div class="event-sidebar-value">가상인간의 의인화, 마음 지각, AI의 역할 (조력자 vs 경쟁자), 인간-기술 관계</div>
+                    </div>
+
+                    <div class="event-sidebar-item">
+                        <div class="event-sidebar-label">Venue</div>
+                        <div class="event-sidebar-value"><a href="https://www.instagram.com/cafe_bondn/" target="_blank" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">Cafe BonDN</a>, 서울</div>
+                    </div>
+
+                    <div class="event-sidebar-item">
+                        <div class="event-sidebar-label">Format</div>
+                        <div class="event-sidebar-value">발제 30분 + 소그룹 대화 60분</div>
+                    </div>
+
+                    <!-- Audio Invitation -->
+                    <div class="audio-invite">
+                        <div class="audio-invite-label">화자의 음성 초대장</div>
+                        <div class="audio-invite-player">
+                            <button class="audio-play-btn" aria-label="Play">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                            </button>
+                            <div class="audio-wave">
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                                <span class="audio-wave-bar"></span>
+                            </div>
+                            <span class="audio-duration">0:18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="faq-header">
+            <div class="header-decor">
+                <div class="decor-shape" style="background: rgba(0,0,0,0.1); border-color: rgba(0,0,0,0.15);"></div>
+                <div class="decor-shape" style="background: rgba(0,0,0,0.1); border-color: rgba(0,0,0,0.15);"></div>
+                <div class="decor-shape" style="background: rgba(0,0,0,0.1); border-color: rgba(0,0,0,0.15);"></div>
+            </div>
+            <div class="container">
+                <div class="section-label">
+                    <span class="section-number">04</span>
+                    <span class="section-name">FAQ</span>
+                </div>
+                <h2 class="section-title">
+                    자주 묻는 질문
+                    <span class="section-title-en">Everything you want to know before joining</span>
+                </h2>
+            </div>
+        </div>
+
+        <ul class="faq-list">
+            <li class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open'); const a = this.nextElementSibling; a.style.maxHeight = a.style.maxHeight ? null : a.scrollHeight + 'px';">
+                    '타이니 소셜'은 무엇을 하는 모임인가요?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        퇴근 후 카페나 펍에서 열리는 소규모 모임이에요. 한 명의 전문가가 흥미로운 생각을 30분간 나누고, 이후 참여자들이 자유롭게 서로의 생각을 주고받는 시간입니다. 강의라기보다는 '라이브 칼럼'에 가까워요.
+                    </div>
+                </div>
+            </li>
+            <li class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open'); const a = this.nextElementSibling; a.style.maxHeight = a.style.maxHeight ? null : a.scrollHeight + 'px';">
+                    혼자 참여해도 어색하지 않을까요?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        전혀요! 대부분 혼자 오시고, 강제 아이스브레이커나 자기소개 같은 건 없어요. 조용히 듣기만 하셔도 되고, 대화에 참여하고 싶을 때만 자연스럽게 합류하시면 됩니다.
+                    </div>
+                </div>
+            </li>
+            <li class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open'); const a = this.nextElementSibling; a.style.maxHeight = a.style.maxHeight ? null : a.scrollHeight + 'px';">
+                    참가비에 음료나 음식이 포함되어 있나요?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        참가비에는 장소 이용과 모임 참여가 포함되어 있어요. 음료와 음식은 각자 취향에 맞게 주문하시면 됩니다. 카페와 펍이라 편하게 마시면서 참여하시면 돼요.
+                    </div>
+                </div>
+            </li>
+            <li class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open'); const a = this.nextElementSibling; a.style.maxHeight = a.style.maxHeight ? null : a.scrollHeight + 'px';">
+                    관련 지식이 전혀 없어도 강연을 들을 수 있나요?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        물론이에요! 전문 지식이 필요한 세미나가 아니라, 흥미로운 생각을 편안하게 나누는 자리예요. 오히려 다른 분야에서 오신 분의 시각이 대화를 더 풍성하게 만들어요.
+                    </div>
+                </div>
+            </li>
+            <li class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open'); const a = this.nextElementSibling; a.style.maxHeight = a.style.maxHeight ? null : a.scrollHeight + 'px';">
+                    일반적인 원데이 클래스나 인문학 강의와 무엇이 다른가요?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        원데이 클래스는 기술을 배우고, 인문학 강의는 지식을 전달받는 자리라면, 타이니 소셜은 '생각을 나누는' 자리에요. 화자의 이야기는 마중물일 뿐, 핵심은 참여자 각자가 자기만의 생각을 발견하고 나누는 데 있어요.
+                    </div>
+                </div>
+            </li>
+            <li class="faq-item">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open'); const a = this.nextElementSibling; a.style.maxHeight = a.style.maxHeight ? null : a.scrollHeight + 'px';">
+                    '소셜 시간'에는 구체적으로 무엇을 하나요?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        화자의 발제가 끝나면 자연스럽게 소그룹 대화로 이어져요. 같은 주제에 대해 각자의 경험과 생각을 나누다 보면 어느새 시간이 훌쩍 지나 있을 거예요. 마지막에는 화자와 참여자가 구분 없이 편안하게 섞이는 시간이 있어요.
+                    </div>
+                </div>
+            </li>
+        </ul>
     </section>
 
     <!-- Footer -->
@@ -1629,29 +2222,30 @@
                     <span class="footer-logo-dot"></span>
                 </div>
                 <p class="footer-tagline">
-                    조용히 와서, 생각 하나만 가져가세요.<br>
-                    Come tired, leave refreshed.
+                    퇴근 후, 생각 하나만 가져가세요.<br>
+                    Your live column after work.
                 </p>
             </div>
 
             <div class="footer-links">
                 <div class="footer-col">
                     <div class="footer-col-title">Connect</div>
-                    <a href="#">Instagram</a>
+                    <a href="https://www.instagram.com/project.tinysocial/" target="_blank">Instagram</a>
                     <a href="#">Email</a>
                     <a href="#">KakaoTalk</a>
                 </div>
                 <div class="footer-col">
                     <div class="footer-col-title">Navigate</div>
                     <a href="#about">About</a>
+                    <a href="#how">How It Works</a>
                     <a href="#events">Events</a>
-                    <a href="#">FAQ</a>
+                    <a href="#faq">FAQ</a>
                 </div>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p class="footer-copy">© 2026 TINY SOCIAL. SEOUL · SAN FRANCISCO. RECHARGE YOUR MIND.</p>
+            <p class="footer-copy">© 2026 TINY SOCIAL. SEOUL · SAN FRANCISCO. YOUR LIVE COLUMN AFTER WORK.</p>
         </div>
     </footer>
 
